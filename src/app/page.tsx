@@ -7,7 +7,7 @@ export default async function Home() {
   const user = await getUser();
 
   return (
-    <div className="flex flex-col">
+    <div>
       <Suspense fallback={<div>Fallback a...</div>} key={user}>
         <Await promise={getData(user)}>{(data) => <div>a: {data}</div>}</Await>
       </Suspense>

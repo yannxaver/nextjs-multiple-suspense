@@ -1,11 +1,7 @@
-export const getUser = async (): Promise<number> => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+"use server";
 
-  return Math.random();
-};
+import { revalidatePath } from "next/cache";
 
-export const getData = async (user: number): Promise<number> => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
-  return Math.random() * user;
-};
+export async function refreshAction() {
+  revalidatePath("/");
+}

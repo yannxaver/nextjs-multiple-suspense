@@ -1,9 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { refreshAction } from "@/actions/actions";
 
 export function Button() {
-  const router = useRouter();
-
-  return <button onClick={() => router.refresh()}>Refresh</button>;
+  return (
+    <form>
+      <button formAction={refreshAction}>Refresh</button>
+    </form>
+  );
 }

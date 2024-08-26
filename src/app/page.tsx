@@ -8,11 +8,11 @@ export default async function Home() {
 
   return (
     <div>
-      <Suspense fallback={<div>Fallback a...</div>} key={user}>
+      <Suspense fallback={<div>Fallback a...</div>}>
         <Await promise={getData(user)}>{(data) => <div>a: {data}</div>}</Await>
       </Suspense>
 
-      <Suspense fallback={<div>Fallback b...</div>} key={user}>
+      <Suspense fallback={<div>Fallback b...</div>}>
         <Await promise={getData(user)}>{(data) => <div>b: {data}</div>}</Await>
       </Suspense>
 
